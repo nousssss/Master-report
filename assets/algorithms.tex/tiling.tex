@@ -1,0 +1,26 @@
+\begin{algorithm}[hbt!]
+    \caption{Loop tiling on Standard Spatial Convolution}%
+    \label{algo:tiling}
+    \Begin{
+        \For{\((c_o=0 ; c_o<C_O ; c_o++)\)}{
+            \For{\((c_i=0 ; c_i<C_I ; c_i++)\)}{
+                \For{\((o_h=0 ; o_h<O_H ; o_h+= 4)\)}{
+                    \For{\((o_w=0 ; o_w<O_W ; o_w+= 4)\)}{
+                        \For{\((k_h=0 ; k_h<K_H ; k_h++)\)}{
+                            \For{\((k_w=0 ; k_w<K_W ; k_w++)\)}{
+                                \For{\((oh_t = oh; oh_t < min(4,o_h+4); o_{ht}++_\)}{
+                                    \For{\((o_{wt} = o_w; o_{wt} < min(4,o_w+4); o_{wt}++)\)}{
+                                        \(O[c_o][o_{ht}][o_{wt}] += K[c_i][c_o][k_h][k_w] * I[c_i][o_{ht}+k_h][o_{wt}+k_w]\)
+                                    }
+                                
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+\end{algorithm}

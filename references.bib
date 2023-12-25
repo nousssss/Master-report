@@ -1,13 +1,476 @@
+@article{NAS-survey,
+author = {Elsken, Thomas and Metzen, Jan Hendrik and Hutter, Frank},
+title = {Neural Architecture Search: A Survey},
+year = {2019},
+issue_date = {January 2019},
+publisher = {JMLR.org},
+volume = {20},
+number = {1},
+issn = {1532-4435},
+abstract = {Deep Learning has enabled remarkable progress over the last years on a variety of tasks, such as image recognition, speech recognition, and machine translation. One crucial aspect for this progress are novel neural architectures. Currently employed architectures have mostly been developed manually by human experts, which is a time-consuming and error-prone process. Because of this, there is growing interest in automated neural architecture search methods. We provide an overview of existing work in this field of research and categorize them according to three dimensions: search space, search strategy, and performance estimation strategy.},
+journal = {J. Mach. Learn. Res.},
+month = {jan},
+pages = {1997–2017},
+numpages = {21},
+keywords = {search strategy, search space design, neural architecture search, performance estimation strategy, autoML, autoDL}
+}
+
+@INPROCEEDINGS {cell-level,
+author = {B. Zoph and V. Vasudevan and J. Shlens and Q. V. Le},
+booktitle = {2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+title = {Learning Transferable Architectures for Scalable Image Recognition},
+year = {2018},
+volume = {},
+issn = {},
+pages = {8697-8710},
+abstract = {Developing neural network image classification models often requires significant architecture engineering. In this paper, we study a method to learn the model architectures directly on the dataset of interest. As this approach is expensive when the dataset is large, we propose to search for an architectural building block on a small dataset and then transfer the block to a larger dataset. The key contribution of this work is the design of a new search space (which we call the &quot;NASNet search space&quot;) which enables transferability. In our experiments, we search for the best convolutional layer (or &quot;cell&quot;) on the CIFAR-10 dataset and then apply this cell to the ImageNet dataset by stacking together more copies of this cell, each with their own parameters to design a convolutional architecture, which we name a &quot;NASNet architecture&quot;. We also introduce a new regularization technique called ScheduledDropPath that significantly improves generalization in the NASNet models. On CIFAR-10 itself, a NASNet found by our method achieves 2.4% error rate, which is state-of-the-art. Although the cell is not searched for directly on ImageNet, a NASNet constructed from the best cell achieves, among the published works, state-of-the-art accuracy of 82.7% top-1 and 96.2% top-5 on ImageNet. Our model is 1.2% better in top-1 accuracy than the best human-invented architectures while having 9 billion fewer FLOPS - a reduction of 28% in computational demand from the previous state-of-the-art model. When evaluated at different levels of computational cost, accuracies of NASNets exceed those of the state-of-the-art human-designed models. For instance, a small version of NASNet also achieves 74% top-1 accuracy, which is 3.1% better than equivalently-sized, state-of-the-art models for mobile platforms. Finally, the image features learned from image classification are generically useful and can be transferred to other computer vision problems. On the task of object detection, the learned features by NASNet used with the Faster-RCNN framework surpass state-of-the-art by 4.0% achieving 43.1% mAP on the COCO dataset.},
+keywords = {computer architecture;microprocessors;computational modeling;aerospace electronics;convolution;google;search methods},
+doi = {10.1109/CVPR.2018.00907},
+url = {https://doi.ieeecomputersociety.org/10.1109/CVPR.2018.00907},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {jun}
+}
+
+
+@inproceedings{
+  onceforall,
+  title={Once for All: Train One Network and Specialize it for Efficient Deployment},
+  author={Han Cai and Chuang Gan and Tianzhe Wang and Zhekai Zhang and Song Han},
+  booktitle={International Conference on Learning Representations},
+  year={2020},
+  url={https://arxiv.org/pdf/1908.09791.pdf}
+}
+
+@INPROCEEDINGS{autodeeplab,
+  author={Liu, Chenxi and Chen, Liang-Chieh and Schroff, Florian and Adam, Hartwig and Hua, Wei and Yuille, Alan L. and Fei-Fei, Li},
+  booktitle={2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={Auto-DeepLab: Hierarchical Neural Architecture Search for Semantic Image Segmentation}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={82-92},
+  doi={10.1109/CVPR.2019.00017}}
+
+@article{nasrl,
+author = {Zoph, Barret and Le, Quoc},
+year = {2016},
+month = {11},
+pages = {},
+title = {Neural Architecture Search with Reinforcement Learning}
+}
+
+@article{darts,
+  title={DARTS: Differentiable Architecture Search},
+  author={Liu, Hanxiao and Simonyan, Karen and Yang, Yiming},
+  journal={arXiv preprint arXiv:1806.09055},
+  year={2018}
+}
+
+@INPROCEEDINGS{resnet50,
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={Deep Residual Learning for Image Recognition}, 
+  year={2016},
+  volume={},
+  number={},
+  pages={770-778},
+  doi={10.1109/CVPR.2016.90}}
+
+@inproceedings{resnext,
+author = {Xie, Saining and Girshick, Ross and Dollar, Piotr and Tu, Z. and He, Kaiming},
+year = {2017},
+month = {07},
+pages = {5987-5995},
+title = {Aggregated Residual Transformations for Deep Neural Networks},
+doi = {10.1109/CVPR.2017.634}
+}
+
+@article{mobilenet,
+author = {Howard, Andrew and Zhu, Menglong and Chen, Bo and Kalenichenko, Dmitry and Wang, Weijun and Weyand, Tobias and Andreetto, Marco and Adam, Hartwig},
+year = {2017},
+month = {04},
+pages = {},
+title = {MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications}
+}
+
+@INPROCEEDINGS {mobilenetv2,
+author = {M. Sandler and A. Howard and M. Zhu and A. Zhmoginov and L. Chen},
+booktitle = {2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+title = {MobileNetV2: Inverted Residuals and Linear Bottlenecks},
+year = {2018},
+volume = {},
+issn = {},
+pages = {4510-4520},
+abstract = {In this paper we describe a new mobile architecture, MobileNetV2, that improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. We also describe efficient ways of applying these mobile models to object detection in a novel framework we call SSDLite. Additionally, we demonstrate how to build mobile semantic segmentation models through a reduced form of DeepLabv3 which we call Mobile DeepLabv3. is based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally, we find that it is important to remove non-linearities in the narrow layers in order to maintain representational power. We demonstrate that this improves performance and provide an intuition that led to this design. Finally, our approach allows decoupling of the input/output domains from the expressiveness of the transformation, which provides a convenient framework for further analysis. We measure our performance on ImageNet [1] classification, COCO object detection [2], VOC image segmentation [3]. We evaluate the trade-offs between accuracy, and number of operations measured by multiply-adds (MAdd), as well as actual latency, and the number of parameters.},
+keywords = {manifolds;neural networks;computer architecture;standards;computational modeling;task analysis},
+doi = {10.1109/CVPR.2018.00474},
+url = {https://doi.ieeecomputersociety.org/10.1109/CVPR.2018.00474},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {jun}
+}
+
+@INPROCEEDINGS {shufflenet,
+author = {X. Zhang and X. Zhou and M. Lin and J. Sun},
+booktitle = {2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+title = {ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices},
+year = {2018},
+volume = {},
+issn = {},
+pages = {6848-6856},
+abstract = {We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially for mobile devices with very limited computing power (e.g., 10-150 MFLOPs). The new architecture utilizes two new operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1 error (absolute 7.8%) than recent MobileNet [12] on ImageNet classification task, under the computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ~13× actual speedup over AlexNet while maintaining comparable accuracy.},
+keywords = {convolution;complexity theory;computer architecture;mobile handsets;computational modeling;task analysis;neural networks},
+doi = {10.1109/CVPR.2018.00716},
+url = {https://doi.ieeecomputersociety.org/10.1109/CVPR.2018.00716},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {jun}
+}
+
 @inproceedings{attention,
-  title     = {Attention is All you Need},
-  volume    = {30},
-  url       = {
-               https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html
-               },
-  booktitle = {Advances in Neural Information Processing Systems},
-  publisher = {Curran Associates, Inc.},
-  author    = { Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit,
-               Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, Łukasz and
-               Polosukhin, Illia },
-  year      = {2017}
+ author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, \L ukasz and Polosukhin, Illia},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {Attention is All you Need},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf},
+ volume = {30},
+ year = {2017}
+}
+
+@inproceedings{conv,
+ author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {F. Pereira and C.J. Burges and L. Bottou and K.Q. Weinberger},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {ImageNet Classification with Deep Convolutional Neural Networks},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf},
+ volume = {25},
+ year = {2012}
+}
+
+@inproceedings{dilated,
+author = {Yu, Fisher and Koltun, Vladlen},
+year = {2016},
+month = {05},
+pages = {},
+title = {Multi-Scale Context Aggregation by Dilated Convolutions}
+}
+
+@INPROCEEDINGS{squeeze,
+  author={Hu, Jie and Shen, Li and Sun, Gang},
+  booktitle={2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 
+  title={Squeeze-and-Excitation Networks}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={7132-7141},
+  doi={10.1109/CVPR.2018.00745}}
+
+@article{pointwise,
+  title={Xception: Deep Learning with Depthwise Separable Convolutions},
+  author={François Chollet},
+  journal={2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2016},
+  pages={1800-1807},
+  url={https://api.semanticscholar.org/CorpusID:2375110}
+}
+
+@book{parallel,
+author = {Padua, David},
+title = {Encyclopedia of Parallel Computing},
+year = {2011},
+isbn = {0387097651},
+publisher = {Springer Publishing Company, Incorporated},
+abstract = {Containing over 300 entries in an A-Z format, the Encyclopedia of Parallel Computing provides easy, intuitive access to relevant information for professionals and researchersseeking access to any aspect within the broad field of parallel computing. Topics for this comprehensive reference were selected, written, and peer-reviewed by an international pool of distinguished researchers in the field. The Encyclopedia is broad in scope, covering machine organization, programming languages, algorithms, and applications. Within each area, concepts, designs, and specific implementations are presented. The highly-structured essays in this work comprise synonyms, a definition and discussion of the topic, bibliographies, and links to related literature. Extensive cross-references to other entries within the Encyclopedia support efficient, user-friendly searchers for immediate access to useful information. Key concepts presented in the Encyclopedia of Parallel Computing include; laws and metrics; specific numerical and non-numerical algorithms; asynchronous algorithms; libraries of subroutines; benchmark suites; applications; sequential consistency and cache coherency; machine classes such as clusters, shared-memory multiprocessors, special-purpose machines and dataflow machines; specific machines such as Cray supercomputers, IBMs cell processor and Intels multicore machines; race detection and auto parallelization; parallel programming languages, synchronization primitives, collective operations, message passing libraries, checkpointing, and operating systems. Topics covered: Speedup, Efficiency, Isoefficiency, Redundancy, Amdahls law, Computer Architecture Concepts, Parallel Machine Designs, Benmarks, Parallel Programming concepts \& design, Algorithms, Parallel applications. This authoritative reference will be published in two formats: print and online. The online edition features hyperlinks to cross-references and to additional significant research. Related Subjects: supercomputing, high-performance computing, distributed computing}
+}
+
+@incollection{transfos,
+  author      = "Cardoso, Joo Manuel Paiva and Coutinho, Jos Gabriel de Figueiredo and Diniz, Pedro C.",
+  title       = "Chapter 5 - Source Code Transformations and Optimizations",
+  booktitle   = "Embedded Computing for High Performance: Efficient Mapping of Computations Using Customization, Code Transformations and Compilation",
+  publisher   = "Morgan Kaufmann Publishers Inc.",
+  address     = "San Francisco, CA, USA",
+  year        = 2017,
+  pages       = "137–183",
+  chapter     = 5,
+isbn = {0128041897},
+edition = {1st},
+abstract = {Embedded Computing for High Performance: Design Exploration and Customization Using High-level Compilation and Synthesis Tools provides a set of real-life example implementations that migrate traditional desktop systems to embedded systems. Working with popular hardware, including Xilinx and ARM, the book offers a comprehensive description of techniques for mapping computations expressed in programming languages such as C or MATLAB to high-performance embedded architectures consisting of multiple CPUs, GPUs, and reconfigurable hardware (FPGAs). The authors demonstrate a domain-specific language (LARA) that facilitates retargeting to multiple computing systems using the same source code. In this way, users can decouple original application code from transformed code and enhance productivity and program portability. After reading this book, engineers will understand the processes, methodologies, and best practices needed for the development of applications for high-performance embedded computing systems. Focuses on maximizing performance while managing energy consumption in embedded systems Explains how to retarget code for heterogeneous systems with GPUs and FPGAs Demonstrates a domain-specific language that facilitates migrating and retargeting existing applications to modern systems Includes downloadable slides, tools, and tutorials}
+
+}
+
+@INPROCEEDINGS{xception,
+  author={Chollet, François},
+  booktitle={2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={Xception: Deep Learning with Depthwise Separable Convolutions}, 
+  year={2017},
+  volume={},
+  number={},
+  pages={1800-1807},
+  doi={10.1109/CVPR.2017.195}}
+
+
+@ARTICLE{freelunch,
+  author={Wolpert, David H.},
+  journal={Neural Computation}, 
+  title={The Lack of A Priori Distinctions Between Learning Algorithms}, 
+  year={1996},
+  volume={8},
+  number={7},
+  pages={1341-1390},
+  doi={10.1162/neco.1996.8.7.1341}}
+
+@inproceedings{
+  proxylessnas,
+  title={Proxyless{NAS}: Direct Neural Architecture Search on Target Task and Hardware},
+  author={Han Cai and Ligeng Zhu and Song Han},
+  booktitle={International Conference on Learning Representations},
+  year={2019},
+  url={https://arxiv.org/pdf/1812.00332.pdf}
+}
+
+@article{smash,
+  title={SMASH: One-Shot Model Architecture Search through HyperNetworks},
+  author={Andrew Brock and Theodore Lim and James M. Ritchie and Nick Weston},
+  journal={ArXiv},
+  year={2017},
+  volume={abs/1708.05344},
+  url={https://api.semanticscholar.org/CorpusID:3489117}
+}
+
+
+@InProceedings{subset,
+  title = 	 {{Fast Bayesian Optimization of Machine Learning Hyperparameters on Large Datasets}},
+  author = 	 {Klein, Aaron and Falkner, Stefan and Bartels, Simon and Hennig, Philipp and Hutter, Frank},
+  booktitle = 	 {Proceedings of the 20th International Conference on Artificial Intelligence and Statistics},
+  pages = 	 {528--536},
+  year = 	 {2017},
+  editor = 	 {Singh, Aarti and Zhu, Jerry},
+  volume = 	 {54},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {20--22 Apr},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v54/klein17a/klein17a.pdf},
+  url = 	 {https://proceedings.mlr.press/v54/klein17a.html},
+  abstract = 	 {Bayesian optimization has become a successful tool for hyperparameter optimization of machine learning algorithms, such as support vector machines or deep neural networks. Despite its success, for large datasets, training and validating a single configuration often takes hours, days, or even weeks, which limits the achievable performance. To accelerate hyperparameter optimization, we propose a generative model for the validation error as a function of training set size, which is learned during the optimization process and allows exploration of preliminary configurations on small subsets, by extrapolating to the full dataset.  We construct a Bayesian optimization procedure, dubbed FABOLAS, which models loss and training time as a function of dataset size and automatically trades off high information gain about the global optimum against computational cost. Experiments optimizing support vector machines and deep neural networks show that FABOLAS often finds high-quality solutions 10 to 100 times faster than other state-of-the-art Bayesian optimization methods or the recently proposed bandit strategy Hyperband.}
+}
+
+@article{hwnas-survey,
+  title={A Comprehensive Survey on Hardware-Aware Neural Architecture Search},
+  author={Hadjer Benmeziane and Kaoutar El Maghraoui and Hamza Ouarnoughi and Sma{\"i}l Niar and Martin Wistuba and Naigang Wang},
+  journal={ArXiv},
+  year={2021},
+  volume={abs/2101.09336},
+  url={https://api.semanticscholar.org/CorpusID:231699126}
+}
+
+@Book{dlbook,
+  Title                    = {Deep Learning},
+  Author                   = {Ian J. Goodfellow and Yoshua Bengio and Aaron Courville},
+  Publisher                = {MIT Press},
+  Year                     = {2016},
+  page                     = {342},
+  Address                  = {Cambridge, MA, USA},
+  Note                     = {\url{http://www.deeplearningbook.org}}
+}
+
+@article{fbnet,
+  author = {Wu, Bichen and Dai, Xiaoliang and Zhang, Peizhao and Wang, Yanghan and Sun, Fei and Wu, Yiming and Tian, Yuandong and Vajda, Peter and Jia, Yangqing and Keutzer, Kurt},
+  biburl = {https://www.bibsonomy.org/bibtex/2b63f965b2e85bf4ffeac55a7b260f2cb/dblp},
+  ee = {http://arxiv.org/abs/1812.03443},
+  interhash = {b71b9ab5dc8cdd5cc7b63a8711f9d8ab},
+  intrahash = {b63f965b2e85bf4ffeac55a7b260f2cb},
+  journal = {CoRR},
+  timestamp = {2019-01-02T11:37:44.000+0100},
+  title = {FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search.},
+  url = {http://dblp.uni-trier.de/db/journals/corr/corr1812.html#abs-1812-03443},
+  volume = {abs/1812.03443},
+  year = 2018
+}
+
+@INPROCEEDINGS{fnas,
+  author={Jiang, Weiwen and Zhang, Xinyi and Sha, Edwin H.-M. and Yang, Lei and Zhuge, Qingfeng and Shi, Yiyu and Hu, Jingtong},
+  booktitle={2019 56th ACM/IEEE Design Automation Conference (DAC)}, 
+  title={Accuracy vs. Efficiency: Achieving Both through FPGA-Implementation Aware Neural Architecture Search}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={1-6},
+  doi={}}
+
+@INPROCEEDINGS{multi-target,
+  author={Chu, Grace and Arikan, Okan and Bender, Gabriel and Wang, Weijun and Brighton, Achille and Kindermans, Pieter-Jan and Liu, Hanxiao and Akin, Berkin and Gupta, Suyog and Howard, Andrew},
+  booktitle={2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)}, 
+  title={Discovering Multi-Hardware Mobile Models via Architecture Search}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={3016-3025},
+  doi={10.1109/CVPRW53098.2021.00337}}
+
+@INPROCEEDINGS {mnasnet,
+author = {M. Tan and B. Chen and R. Pang and V. Vasudevan and M. Sandler and A. Howard and Q. V. Le},
+booktitle = {2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+title = {MnasNet: Platform-Aware Neural Architecture Search for Mobile},
+year = {2019},
+volume = {},
+issn = {},
+pages = {2815-2823},
+abstract = {Designing convolutional neural networks (CNN) for mobile devices is challenging because mobile models need to be small and fast, yet still accurate. Although significant efforts have been dedicated to design and improve mobile CNNs on all dimensions, it is very difficult to manually balance these trade-offs when there are so many architectural possibilities to consider. In this paper, we propose an automated mobile neural architecture search (MNAS) approach, which explicitly incorporate model latency into the main objective so that the search can identify a model that achieves a good trade-off between accuracy and latency. Unlike previous work, where latency is considered via another, often inaccurate proxy (e.g., FLOPS), our approach directly measures real-world inference latency by executing the model on mobile phones. To further strike the right balance between flexibility and search space size, we propose a novel factorized hierarchical search space that encourages layer diversity throughout the network. Experimental results show that our approach consistently outperforms state-of-the-art mobile CNN models across multiple vision tasks. On the ImageNet classification task, our MnasNet achieves 75.2% top-1 accuracy with 78ms latency on a Pixel phone, which is 1.8× faster than MobileNetV2 with 0.5% higher accuracy and 2.3× faster than NASNet with 1.2% higher accuracy. Our MnasNet also achieves better mAP quality than MobileNets for COCO object detection. Code is at https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet.},
+keywords = {},
+doi = {10.1109/CVPR.2019.00293},
+url = {https://doi.ieeecomputersociety.org/10.1109/CVPR.2019.00293},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {jun}
+}
+
+@article{sequential-optim,
+  title={Design Automation for Efficient Deep Learning Computing},
+  author={Song Han and Han Cai and Ligeng Zhu and Ji Lin and Kuan Wang and Zhijian Liu and Yujun Lin},
+  journal={ArXiv},
+  year={2019},
+  volume={abs/1904.10616},
+  url={https://api.semanticscholar.org/CorpusID:129945320}
+}
+
+@misc{monas,
+Author = {Chi-Hung Hsu and Shu-Huan Chang and Jhao-Hong Liang and Hsin-Ping Chou and Chun-Hao Liu and Shih-Chieh Chang and Jia-Yu Pan and Yu-Ting Chen and Wei Wei and Da-Cheng Juan},
+Title = {MONAS: Multi-Objective Neural Architecture Search using Reinforcement Learning},
+Year = {2018},
+Eprint = {arXiv:1806.10332},
+}
+
+
+@InProceedings{ithemal,
+  title = 	 {Ithemal: Accurate, Portable and Fast Basic Block Throughput Estimation using Deep Neural Networks},
+  author =       {Mendis, Charith and Renda, Alex and Amarasinghe, Dr.Saman and Carbin, Michael},
+  booktitle = 	 {Proceedings of the 36th International Conference on Machine Learning},
+  pages = 	 {4505--4515},
+  year = 	 {2019},
+  editor = 	 {Chaudhuri, Kamalika and Salakhutdinov, Ruslan},
+  volume = 	 {97},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {09--15 Jun},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v97/mendis19a/mendis19a.pdf},
+  url = 	 {https://proceedings.mlr.press/v97/mendis19a.html},
+  abstract = 	 {Predicting the number of clock cycles a processor takes to execute a block of assembly instructions in steady state (the throughput) is important for both compiler designers and performance engineers. Building an analytical model to do so is especially complicated in modern x86-64 Complex Instruction Set Computer (CISC) machines with sophisticated processor microarchitectures in that it is tedious, error prone, and must be performed from scratch for each processor generation. In this paper we present Ithemal, the first tool which learns to predict the throughput of a set of instructions. Ithemal uses a hierarchical LSTM–based approach to predict throughput based on the opcodes and operands of instructions in a basic block. We show that Ithemal is more accurate than state-of-the-art hand-written tools currently used in compiler backends and static machine code analyzers. In particular, our model has less than half the error of state-of-the-art analytical models (LLVM’s llvm-mca and Intel’s IACA). Ithemal is also able to predict these throughput values just as fast as the aforementioned tools, and is easily ported across a variety of processor microarchitectures with minimal developer effort.}
+}
+@inproceedings{treegru,
+    title = "Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks",
+    author = "Tai, Kai Sheng  and
+      Socher, Richard  and
+      Manning, Christopher D.",
+    editor = "Zong, Chengqing  and
+      Strube, Michael",
+    booktitle = "Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+    month = jul,
+    year = "2015",
+    address = "Beijing, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/P15-1150",
+    doi = "10.3115/v1/P15-1150",
+    pages = "1556--1566",
+}
+
+@inproceedings{autotvm,
+author = {Chen, Tianqi and Zheng, Lianmin and Yan, Eddie and Jiang, Ziheng and Moreau, Thierry and Ceze, Luis and Guestrin, Carlos and Krishnamurthy, Arvind},
+title = {Learning to Optimize Tensor Programs},
+year = {2018},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {We introduce a learning-based framework to optimize tensor programs for deep learning workloads. Efficient implementations of tensor operators, such as matrix multiplication and high dimensional convolution, are key enablers of effective deep learning systems. However, current systems rely on manually optimized libraries, e.g., cuDNN, that support only a narrow range of server class GPUs. Such reliance limits the applicability of high-level graph optimizations and incurs significant engineering costs when deploying to new hardware targets. We use learning to remove this engineering burden. We learn domain-specific statistical cost models to guide the search of tensor operator implementations over billions of possible program variants. We further accelerate the search using effective model transfer across workloads. Experimental results show that our framework delivers performance that is competitive with state-of-the-art hand-tuned libraries for low-power CPUs, mobile GPUs, and server-class GPUs.},
+booktitle = {Proceedings of the 32nd International Conference on Neural Information Processing Systems},
+pages = {3393–3404},
+numpages = {12},
+location = {Montr\'{e}al, Canada},
+series = {NIPS'18}
+}
+
+@article{halide,
+author = {Adams, Andrew and Ma, Karima and Anderson, Luke and Baghdadi, Riyadh and Li, Tzu-Mao and Gharbi, Micha\"{e}l and Steiner, Benoit and Johnson, Steven and Fatahalian, Kayvon and Durand, Fr\'{e}do and Ragan-Kelley, Jonathan},
+title = {Learning to Optimize Halide with Tree Search and Random Programs},
+year = {2019},
+issue_date = {August 2019},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {38},
+number = {4},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/3306346.3322967},
+doi = {10.1145/3306346.3322967},
+abstract = {We present a new algorithm to automatically schedule Halide programs for high-performance image processing and deep learning. We significantly improve upon the performance of previous methods, which considered a limited subset of schedules. We define a parameterization of possible schedules much larger than prior methods and use a variant of beam search to search over it. The search optimizes runtime predicted by a cost model based on a combination of new derived features and machine learning. We train the cost model by generating and featurizing hundreds of thousands of random programs and schedules. We show that this approach operates effectively with or without autotuning. It produces schedules which are on average almost twice as fast as the existing Halide autoscheduler without autotuning, or more than twice as fast with, and is the first automatic scheduling algorithm to significantly outperform human experts on average.},
+journal = {ACM Trans. Graph.},
+month = {jul},
+articleno = {121},
+numpages = {12},
+keywords = {halide, optimizing compilers}
+}
+
+@inproceedings{deeptune,
+  title={End-to-end Deep Learning of Optimization Heuristics},
+  author={Cummins, Chris and Petoumenos, Pavlos and Wang, Zheng and Leather, Hugh},
+  booktitle={PACT},
+  year={2017},
+  organization={ACM}
+}
+
+@article{tiramisu-autosched,
+  title={A Deep Learning Based Cost Model for Automatic Code Optimization},
+  author={Riyadh Baghdadi and Massinissa Merouani and Mohamed-Hicham Leghettas and Kamel Abdous and Taha Arbaoui and Karima Benatchba and Saman P. Amarasinghe},
+  journal={ArXiv},
+  year={2021},
+  volume={abs/2104.04955},
+  url={https://api.semanticscholar.org/CorpusID:229938128}
+}
+
+@inproceedings{nntile,
+  title={Neural Network Assisted Tile Size Selection},
+  author={Mohammed Mustaqim Rahman and Louis-No{\"e}l Pouchet and P. Sadayappan},
+  year={2010},
+  url={https://api.semanticscholar.org/CorpusID:12463325}
+}
+
+@inproceedings{tiramisu,
+author = {Baghdadi, Riyadh and Ray, Jessica and Romdhane, Malek Ben and Del Sozzo, Emanuele and Akkas, Abdurrahman and Zhang, Yunming and Suriana, Patricia and Kamil, Shoaib and Amarasinghe, Saman},
+title = {Tiramisu: A Polyhedral Compiler for Expressing Fast and Portable Code},
+year = {2019},
+isbn = {9781728114361},
+publisher = {IEEE Press},
+abstract = {This paper introduces Tiramisu, a polyhedral framework designed to generate high performance code for multiple platforms including multicores, GPUs, and distributed machines. Tiramisu introduces a scheduling language with novel extensions to explicitly manage the complexities that arise when targeting these systems. The framework is designed for the areas of image processing, stencils, linear algebra and deep learning. Tiramisu has two main features: it relies on a flexible representation based on the polyhedral model and it has a rich scheduling language allowing fine-grained control of optimizations. Tiramisu uses a four-level intermediate representation that allows full separation between the algorithms, loop transformations, data layouts, and communication. This separation simplifies targeting multiple hardware architectures with the same algorithm. We evaluate Tiramisu by writing a set of image processing, deep learning, and linear algebra benchmarks and compare them with state-of-the-art compilers and hand-tuned libraries. We show that Tiramisu matches or outperforms existing compilers and libraries on different hardware architectures, including multicore CPUs, GPUs, and distributed machines.},
+booktitle = {Proceedings of the 2019 IEEE/ACM International Symposium on Code Generation and Optimization},
+pages = {193–205},
+numpages = {13},
+keywords = {Tensors, Deep Learning, GPU, Polyhedral Model, Code Optimization, Code Generation, Distributed Systems},
+location = {Washington, DC, USA},
+series = {CGO 2019}
+}
+
+@INPROCEEDINGS{autophase,
+  author={Huang, Qijing and Haj-Ali, Ameer and Moses, William and Xiang, John and Stoica, Ion and Asanovic, Krste and Wawrzynek, John},
+  booktitle={2019 IEEE 27th Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM)}, 
+  title={AutoPhase: Compiler Phase-Ordering for HLS with Deep Reinforcement Learning}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={308-308},
+  doi={10.1109/FCCM.2019.00049}}
+
+@inproceedings{fuse,
+  title={Learning to fuse},
+  author={Abdolrashidi, Amirali and Xu, Qiumin and Wang, Shibo and Roy, Sudip and Zhou, Yanqi},
+  booktitle={NeurIPS ML for Systems Workshop},
+  year={2019}
+}
+
+@article{schulman2017proximal,
+  title={Proximal policy optimization algorithms},
+  author={Schulman, John and Wolski, Filip and Dhariwal, Prafulla and Radford, Alec and Klimov, Oleg},
+  journal={arXiv preprint arXiv:1707.06347},
+  year={2017}
 }

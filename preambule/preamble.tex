@@ -13,13 +13,14 @@
 \usepackage{import}
 \usepackage{colonequals}
 \usepackage{hyperref}
+
 \hypersetup{%
     colorlinks=true,
     linkcolor=DarkBlue,
     urlcolor=blue,
     citecolor=DarkGreen,
-    pdfauthor={Mohammed Belgoumri},
-    pdfkeywords={this is a kw}
+    pdfauthor={Bachiri Inas},
+    pdfkeywords={Efficient AI, Deep Learning, Neural Architecture Search, Automatic Code Optimization, Edge Devices, Hardware Aware Neural Architecture Search}
 }
 \usepackage{cleveref}
 \usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
@@ -27,6 +28,15 @@
 \usepackage{wrapfig}
 \usepackage{cprotect}
 \import{preambule}{tikz}
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \newlength\figureheight
 \newlength\figurewidth
@@ -62,7 +72,6 @@
 
 
 \setlength{\parskip}{.4cm}
-\import{preambule}{theorems}
 
 \input{preambule/notations}
 
