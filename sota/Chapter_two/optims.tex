@@ -1,0 +1,53 @@
+\section{Loop Optimizations}\label{sec:aco:optims}
+    \input{assets/algorithms.tex/conv}
+
+\subsection{Parallelization}
+A program usually contains a nest of loops, where instructions are executed sequentially. Parallelization aims at extracting parts from these programs that can be executed at the same time without affecting the final result. This is particularly interesting in case we are working on multi-processor systems, with programs where data is stored in random access data structures. So instead of iterating over the data structure and operating on indices one at a time, parallelization will assign one or a chunk of indices to each processor to operate on at the same time as the others. So the parallel processors will execute the same body of the loop, but with different data according to the iteration indices assigned to them~\cite{parallel}
+
+In line with Amdahl’s law, parallelization will cause a speedup to the overall execution of the program. However, parallelization can cause important overhead in some cases, and it also requires synchronization. In addition, to preserve the sequential behaviour of a program when parallelizing it, dependences between iterations must be preserved.
+
+%example on convolution + figure
+
+\subsection{Unrolling}
+Unrolling a loop by a factor of $k$ means manually repeating the loop’s body code $k$ times within the body of the loop and consequentially updating the loop’s iterators and conditions. This increases the number of instructions, which allows for more optimization to be applied and makes the loop more parallelizable, and decreases the iteration space which  minimizes the loop overhead costs, such as branching on the termination condition and updating the counter variables. Increasing the code size, while enabling more optimization potential, might increase instruction cache miss rate as well as memory issues due to the register pressure, so there is a compromise that we need to make by properly picking the unrolling factor $k$.
+
+In~\ref{algo:unrolling}, the kernel spatial dimensions are both unrolled with a factor of $2$.
+\input{assets/algorithms.tex/unrolling}
+
+%example on convolution + figure
+
+\subsection{Interchange}
+Applying interchange on a nested loop means exchanging the order of two of its iteration variables. It is usually applied to improve the global spatial locality of the program by accessing multi-dimensional data in the order in which it is present in memory~\cite{transfos}, that is because when a processor accesses a data element for the first time,  it retrieves from memory the entire data block in which that element resides and stores it in cache. The retrieved block is very likely to contain more elements that the program will be accessing , so applying interchange to access this data before loading another block to cache will considerably increase the cache hit rate. However, interchangeablity of two iterators will highly depend on the dependences present between different iteration variables of the nested loop.
+
+For example, we can apply interchange to exchange the order of the iterators of spatial input dimensions, as illutrsated in~\ref{algo:interchange} 
+
+\input{assets/algorithms.tex/interchange}
+
+%example on convolution + figure
+
+\subsection{Tiling}
+Loop tiling or loop blocking is a code transformation that partitions the loop nest’s iteration space into smaller blocks and then changes the execution order by looping through each of these blocks instead.  This ensures that the data used in a loop stays in the cache until it is reused. The granularity of an iterator’s partition is controlled through a tiling factor. This transformation serves the purpose of reducing loop overhead of the nests and optimizing both spatial and temporal locality~\cite{transfos}
+
+For the convolution example, we can chunk the input tensor by applying tiling on its spatial dimensions with tile sizes of 4 each.~\ref{algo:tiling} 
+
+\input{assets/algorithms.tex/tiling}
+
+%example on convolution + figure
+
+\subsection{Fusion}
+Loop fusion or loop jamming replaces multiple loops with a single one. It avoids temporary allocations and the overhead of loops control structures, and increases parallelism of the loop body~\cite{transfos}.
+
+However, fusion does not always improve the runtime speed. For instance, one some hardware architectures, having multiple loops may perform better if there is increased data locality within each loop alone.
+
+%example on convolution + figure
+
+\subsection{Vectorization}
+Vectorization is the process of converting loops from a scalar implementation, which processes a single pair of operands at a time, to a vector implementation, which processes one operation on multiple pairs of operands at once. This is done on \gls{abb:simd} hardware that have vector operations, by trying to find and exploit SIMD parallelism at the loop level. 
+
+Vectorization starts by finding an innermost loop that can be vectorized, and then transforming it and generating vector codes. So that instead of processing a single element of an array $N$ times, it processes $k$ elements of the array simultaneously $\frac{N}{k}$ times, using a vector size of $k$.
+
+%example on convolution + figure
+
+
+
+

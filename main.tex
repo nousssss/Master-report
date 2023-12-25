@@ -1,7 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
-\input{preambule/preamble}
 
+\input{preambule/preamble}
 
 % !TEX root = main.tex
 \begin{document}
@@ -9,8 +9,6 @@
 \include{titlepage}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
-\input{dedication}
-\input{acknowledgement}
 \include{abstract}
 \afterpage{
     \newgeometry{bottom=3cm}
@@ -18,8 +16,6 @@
     \addcontentsline{toc}{chapter}{Contents}
     \listoffigures
     \addcontentsline{toc}{chapter}{List of figures}
-    \lstlistoflistings
-    \addcontentsline{toc}{chapter}{List of \lstlistlistingname}
     \listofalgorithms
     \addcontentsline{toc}{chapter}{List of Algorithms}
 }
