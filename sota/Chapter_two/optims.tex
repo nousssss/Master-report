@@ -1,5 +1,5 @@
 \section{Loop Optimizations}\label{sec:aco:optims}
-    \input{assets/algorithms.tex/conv}
+    \input{assets/algorithms/conv}
 
 \subsection{Parallelization}
 A program usually contains a nest of loops, where instructions are executed sequentially. Parallelization aims at extracting parts from these programs that can be executed at the same time without affecting the final result. This is particularly interesting in case we are working on multi-processor systems, with programs where data is stored in random access data structures. So instead of iterating over the data structure and operating on indices one at a time, parallelization will assign one or a chunk of indices to each processor to operate on at the same time as the others. So the parallel processors will execute the same body of the loop, but with different data according to the iteration indices assigned to them~\cite{parallel}
@@ -12,7 +12,7 @@ In line with Amdahl’s law, parallelization will cause a speedup to the overall
 Unrolling a loop by a factor of $k$ means manually repeating the loop’s body code $k$ times within the body of the loop and consequentially updating the loop’s iterators and conditions. This increases the number of instructions, which allows for more optimization to be applied and makes the loop more parallelizable, and decreases the iteration space which  minimizes the loop overhead costs, such as branching on the termination condition and updating the counter variables. Increasing the code size, while enabling more optimization potential, might increase instruction cache miss rate as well as memory issues due to the register pressure, so there is a compromise that we need to make by properly picking the unrolling factor $k$.
 
 In~\ref{algo:unrolling}, the kernel spatial dimensions are both unrolled with a factor of $2$.
-\input{assets/algorithms.tex/unrolling}
+\input{assets/algorithms/unrolling}
 
 %example on convolution + figure
 
@@ -21,7 +21,7 @@ Applying interchange on a nested loop means exchanging the order of two of its i
 
 For example, we can apply interchange to exchange the order of the iterators of spatial input dimensions, as illutrsated in~\ref{algo:interchange} 
 
-\input{assets/algorithms.tex/interchange}
+\input{assets/algorithms/interchange}
 
 %example on convolution + figure
 
@@ -30,7 +30,7 @@ Loop tiling or loop blocking is a code transformation that partitions the loop n
 
 For the convolution example, we can chunk the input tensor by applying tiling on its spatial dimensions with tile sizes of 4 each.~\ref{algo:tiling} 
 
-\input{assets/algorithms.tex/tiling}
+\input{assets/algorithms/tiling}
 
 %example on convolution + figure
 
